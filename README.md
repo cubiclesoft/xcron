@@ -167,7 +167,7 @@ The Notifiers section allows for two types of notifiers:  Named notifiers and No
 
 Notifiers have optional error limiting available to limit the number of times sequential errors are sent.  This feature dramatically reduces notification flooding when error conditions arise.
 
-By default, xcron comes with support for three types of Named notifiers:  Email, Slack, and Discord.  The [default xcrontab template](support/xcrontab_template.txt) examples contain the most commonly used options for each officially supported type.  The email notification type supports most but not all of the options from the [Ultimate Email Toolkit](https://github.com/cubiclesoft/ultimate-email).  See the section below called "Creating Custom Notifiers" to learn how to add custom notifiers.
+By default, xcron comes with official support for three notification types:  Email, Slack, and Discord.  The [default xcrontab template](support/xcrontab_template.txt) examples contain the most commonly used options for each officially supported type.  The email notification type supports most but not all of the options from the [Ultimate Email Toolkit](https://github.com/cubiclesoft/ultimate-email).  See the section below called "Creating Custom Notifiers" to learn how to add custom notifiers.
 
 ```
 [Schedules]
