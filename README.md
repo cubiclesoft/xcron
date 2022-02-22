@@ -365,9 +365,9 @@ And a PHP script running as a different user on the system (e.g. 'www-data') tha
 Creating Custom Notifiers
 -------------------------
 
-By default, xcron comes with support for three types of Named notifiers:  Email, Slack, and Discord.  It is fairly easy to add new notification types, typically only requiring around 50-100 lines of PHP code to be written.
+By default, xcron comes with official support for three notification types:  Email, Slack, and Discord.  It is fairly easy to add new notification types, typically only requiring around 50-100 lines of PHP code to be written.
 
-The `notifiers` directory contains the code for each notifier.  The Slack notifier `notifiers/slack.php` is very simple in its design and therefore a good starting point when desigining a new notifier.
+The `notifiers` directory contains the code for each notifier.  The Slack notifier `notifiers/slack.php` is very simple in its design and therefore a good starting point when designing a new notifier.
 
 Each notifier constructor should load all required dependencies up front rather than potentially fail later on.  Since notifiers are loaded into xcron itself, errors in custom notifier code may cause xcron to fail to load or crash the server.  Dependencies should be placed into a subdirectory in the `support` directory.
 
