@@ -163,7 +163,7 @@ me = {"type": "email", "from": "info@addr.com", "to": "email@addr.com", "prefix"
 default = ["me"]
 ```
 
-The Notifiers section allows for two types of notifiers:  Named notifiers and Notifier Groups.  Named notifiers define a single named target and are JSON objects.  Notifier Groups are JSON arrays of Named Notifiers.  The Notifier Group called "default" is reserved as a default notification target if no target is defined for a job schedule.
+The Notifiers section allows for two types of notifiers:  Named notifiers and Notifier Groups.  Named notifiers define a single named target and are JSON objects.  Notifier Groups are JSON arrays of Named Notifiers and other Notifier Groups.  The Notifier Group called "default" is reserved as a default notification target if no target is defined for a job schedule.
 
 Notifiers have optional error limiting available to limit the number of times sequential errors are sent.  This feature dramatically reduces notification flooding when error conditions arise.
 
