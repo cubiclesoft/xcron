@@ -5,7 +5,7 @@ xcron is the souped up, modernized cron/Task Scheduler for Windows, Mac OSX, Lin
 
 Everything you have ever desired to have in cron/Task Scheduling/Job Scheduling system software.  And then some.
 
-xcron is the reference implementation of the [Job Scheduler Feature/Attribute/Behavior Standard (JSFABS)](docs/job-scheduler-feature-attribute-standard-jsfabs.md) and is 94.2% JSFABS-compliant.
+xcron is the reference implementation of the [Job Scheduler Feature/Attribute/Behavior Standard (JSFABS)](docs/job-scheduler-feature-attribute-behavior-standard-jsfabs.md) and is 94.2% JSFABS-compliant.
 
 [![Donate](https://cubiclesoft.com/res/donate-shield.png)](https://cubiclesoft.com/donate/) [![Discord](https://img.shields.io/discord/777282089980526602?label=chat&logo=discord)](https://cubiclesoft.com/product-support/github/)
 
@@ -38,7 +38,7 @@ Features
 * Has a liberal open source license.  MIT or LGPL, your choice.
 * Designed for relatively painless integration into your environment.
 * Sits on GitHub for all of that pull request and issue tracker goodness to easily submit changes and ideas respectively.
-* And more.  xcron is 94.2% [JSFABS-compliant](docs/job-scheduler-feature-attribute-standard-jsfabs.md).
+* And more.  xcron is 94.2% [JSFABS-compliant](docs/job-scheduler-feature-attribute-behavior-standard-jsfabs.md).
 
 Getting Started on Mac OSX/BSD/Linux
 ------------------------------------
