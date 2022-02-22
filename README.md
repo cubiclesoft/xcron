@@ -300,7 +300,7 @@ MY-PC\Me (Elevated)
   cpu               6.3      6.3      0         6.3
   most_cpu          2.1      2.1      0         2.1
   ram               6291456  6291456  0         6291456
-  most_ram          2097152  2097152  0         2097152```
+  most_ram          2097152  2097152  0         2097152
 ```
 
 xcron passes several xcron-specific environment variables to each command for each job:
