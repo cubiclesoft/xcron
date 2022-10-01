@@ -12,7 +12,7 @@
 # Basic format:  [secs] mins hours days months weekday
 # Expanded format:  secs mins hours days months weekday weekrows startdate[/dayskip[/weekskip]] enddate
 
-#xcron_example = {"schedule": "*/15 * * * *", "alert_after": "30m", "notify" => "all", "cmd": "cmd args"}
+#xcron_example = {"schedule": "*/15 * * * *", "alert_after": "30m", "notify": "all", "cmd": "cmd args"}
 #xcron_legacy = */15 * * * * cmd args
 
-#xcron_kitchen_sink = {"tz": "Asia/Tokyo", "base_weekday": "mon", "reload_at_start": true, "reload_at_boot": true, "schedule": true, "output_file": "/tmp/xcron_kitchen_sink.log", "alert_after": "30m", "term_after": "60m", "term_output": "10MB", "stderr_error": true, "notify" => ["me", "slack_alerts"], "user": "www-data", "win_elevated": false, "dir": "/var/www", "cmds": ["cmd1 args", "cmd2 args"], "env": {"APIKEY": "xyzxyzxyz"}, "random_delay": "3m", "min_uptime": "5m", "min_battery": 50, "max_cpu": 80, "max_ram": "5GB", "depends_on": ["xcron_test"], "retry_freq": "2m,5m,10m,15m,30m,60m,60m", "password": "changeme!", "max_queue": -1, "max_running": 1}
+#xcron_kitchen_sink = {"tz": "Asia/Tokyo", "base_weekday": "mon", "reload_at_start": true, "reload_at_boot": true, "schedule": true, "output_file": "/tmp/xcron_kitchen_sink.log", "alert_after": "30m", "term_after": "60m", "term_output": "10MB", "stderr_error": true, "notify": ["me", "slack_alerts"], "user": "www-data", "win_elevated": false, "dir": "/var/www", "cmds": ["cmd1 args", "cmd2 args"], "env": {"APIKEY": "xyzxyzxyz"}, "random_delay": "3m", "min_uptime": "5m", "min_battery": 50, "max_cpu": 80, "max_ram": "5GB", "depends_on": ["xcron_test"], "retry_freq": "2m,5m,10m,15m,30m,60m,60m", "password": "changeme!", "max_queue": -1, "max_running": 1}
