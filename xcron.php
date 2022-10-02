@@ -1995,6 +1995,8 @@
 												}
 											}
 
+											$prevcacheschedules = (isset($cachedata["schedules"][$schedulekey]) ? $cachedata["schedules"][$schedulekey] : array());
+
 											// Remove existing schedules and triggers from the data cache.
 											unset($cachedata["triggers"][$schedulekey]);
 											unset($cachedata["schedules"][$schedulekey]);
@@ -2057,6 +2059,17 @@
 													XCronHelper::$em->Fire("removed_schedule", array($schedulekey, $name));
 												}
 											}
+
+											// Restore last result.
+											foreach ($prevcacheschedules as $name => $prevcacheschedule)
+											{
+												if (isset($cachedata["schedules"][$schedulekey][$name]) && isset($prevcacheschedule["last_result"]))
+												{
+													$cachedata["schedules"][$schedulekey][$name]["last_result"] = $prevcacheschedule["last_result"];
+												}
+											}
+
+											unset($prevcacheschedules);
 
 											// Clean up the start queue.
 											$procready = true;
