@@ -115,6 +115,8 @@
 			$cmd = ProcessHelper::FindExecutable("php", "/usr/bin");
 			if ($cmd === false)  $cmd = PHP_BINARY;
 
+			if (file_exists("/usr/bin/php") && realpath("/usr/bin/php") === $cmd)  $cmd = "/usr/bin/php";
+
 			$data = "#!/bin/sh\n\n";
 			$data .= escapeshellarg($cmd) . " " . escapeshellarg($rootpath . "/xcrontab.php") . " \"\$@\"\n";
 
