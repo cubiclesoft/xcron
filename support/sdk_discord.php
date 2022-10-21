@@ -34,7 +34,7 @@
 				)
 			);
 
-			if ($fileinfo !== false)  $options["files"] = array($fileinfo);
+			if ($fileinfo !== false)  $options["files"] = (isset($fileinfo["name"]) ? array($fileinfo) : $fileinfo);
 
 			$web = new WebBrowser();
 
@@ -64,7 +64,7 @@
 				)
 			);
 
-			if ($method === "POST")
+			if ($method === "POST" || $method === "PUT")
 			{
 				$options2["headers"]["Content-Type"] = "application/json";
 				$options2["body"] = json_encode($postvars, JSON_UNESCAPED_SLASHES);
