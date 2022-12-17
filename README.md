@@ -408,6 +408,38 @@ Extensions generally will not have all of the information necessary to conduct t
 
 The [XCronHelper class](docs/xcron_helper.md) also has useful public static variables and static functions.
 
+Here's an example extension to append the output of `ps` whenever a job fails on Linux hosts:
+
+```php
+<?php
+	// Append the current process tree to failed job output.
+	// (C) 2022 CubicleSoft.  All Rights Reserved.
+
+	class CubicleSoft_ProcessTree
+	{
+		public static function ScheduleJobFailed($schedulekey, $name, &$pinfo, $errorfile)
+		{
+			$ps = ProcessHelper::FindExecutable("ps", "/bin");
+
+			$cmd = escapeshellarg($ps) .  " aux --forest";
+
+			$result = ProcessHelper::StartProcess($cmd);
+			if ($result["success"])
+			{
+				if (XCronHelper::$debug)  echo $result["info"]["cmd"] . "\n";
+
+				$result2 = ProcessHelper::Wait($result["proc"], $result["pipes"]);
+
+				$pinfo["outdata"] .= "\n\n---Start of " . $ps . " output---\n" . $result2["stdout"] . $result2["stderr"] . "---End of " . $ps . " output---\n";
+			}
+		}
+	}
+
+	// Register to receive event notifications.
+	XCronHelper::EventRegister("schedule_job_failed", "CubicleSoft_ProcessTree::ScheduleJobFailed");
+?>
+```
+
 Debugging xcron/xcrontab
 ------------------------
 
