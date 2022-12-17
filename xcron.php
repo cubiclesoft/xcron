@@ -1336,6 +1336,8 @@
 									// Store the gathered output in the correct error file.
 									$errorfile = (isset($sinfo["schedule"]["output_file"]) ? $sinfo["schedule"]["output_file"] : XCronHelper::GetLogOutputFilenameBase($schedulekey, $name)) . ($pinfo["triggered"] ? ".triggered" : "") . ".err";
 
+									XCronHelper::$em->Fire("schedule_job_failed", array($schedulekey, $name, &$pinfo, $errorfile));
+
 									if ($pinfo["triggered"])
 									{
 										if (XCronHelper::InitLogOutputFile($errorfile) && @file_put_contents($errorfile, $pinfo["outdata"]) !== false && isset($fpcache[$errorfile]))
