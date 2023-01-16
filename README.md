@@ -60,7 +60,7 @@ If all goes well, xcron will report that the server has successfully started and
 In another terminal or SSH session, run:
 
 ```
-$ xcrontab -e
+$ ./xcrontab -e
 ```
 
 To launch xcrontab and start editing your user's xcrontab in your preferred terminal editor.  When a xcrontab does not exist, the [default xcrontab template](support/xcrontab_template.txt) is loaded.
@@ -70,13 +70,13 @@ Once you save and exit, the xcrontab is sent to xcron for evaluation and inclusi
 Next, retrieve all schedules, running processes, and stats as xcron sees them:
 
 ```
-$ xcrontab get-schedules "" "" "" ""
+$ ./xcrontab get-schedules "" "" "" ""
 ```
 
 xcrontab is question-answer enabled, simply running it provides an interactive interface:
 
 ```
-$ xcrontab
+$ ./xcrontab
 ```
 
 When you are ready to install xcron as a system service and have it start at boot, run the following as `root`:
@@ -86,6 +86,8 @@ $ sudo php xcron.php install
 ```
 
 Then use your system service starter to start the system service (e.g. `service xcron start` on Debian/Ubuntu).  Some OSes may require manual installation or other intervention to get it running properly.
+
+Once xcron is installed system-wide, `xcrontab` may be run from anywhere on the system.  The script is copied to `/usr/local/bin`.
 
 Getting Started on Windows
 --------------------------
