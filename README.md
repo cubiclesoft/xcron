@@ -60,7 +60,7 @@ If all goes well, xcron will report that the server has successfully started and
 In another terminal or SSH session, run:
 
 ```
-$ ./xcrontab -e
+$ xcrontab -e
 ```
 
 To launch xcrontab and start editing your user's xcrontab in your preferred terminal editor.  When a xcrontab does not exist, the [default xcrontab template](support/xcrontab_template.txt) is loaded.
@@ -70,13 +70,13 @@ Once you save and exit, the xcrontab is sent to xcron for evaluation and inclusi
 Next, retrieve all schedules, running processes, and stats as xcron sees them:
 
 ```
-$ ./xcrontab get-schedules "" "" "" ""
+$ xcrontab get-schedules "" "" "" ""
 ```
 
 xcrontab is question-answer enabled, simply running it provides an interactive interface:
 
 ```
-$ ./xcrontab
+$ xcrontab
 ```
 
 When you are ready to install xcron as a system service and have it start at boot, run the following as `root`:
@@ -465,7 +465,7 @@ Debug mode is very verbose and displays all kinds of details including full comm
 xcrontab also has a debug mode that shows the raw bytes sent to and received from the xcron server:
 
 ```
-$ ./xcrontab -d server-info
+$ xcrontab -d server-info
 Command:  server-info
 ------- RAW SEND START -------
 {"action":"get_server_info"}
