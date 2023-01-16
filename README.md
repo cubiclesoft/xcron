@@ -467,7 +467,7 @@ Debug mode is very verbose and displays all kinds of details including full comm
 xcrontab also has a debug mode that shows the raw bytes sent to and received from the xcron server:
 
 ```
-$ xcrontab -d server-info
+$ ./xcrontab -d server-info
 Command:  server-info
 ------- RAW SEND START -------
 {"action":"get_server_info"}
