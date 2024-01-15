@@ -2166,7 +2166,7 @@
 								$sinfo = &$cachedata["schedules"][$schedulekey][$name];
 
 								if ($pwreq && !isset($sinfo["schedule"]["password"]))  $result2 = array("success" => false, "error" => "Access denied.  The schedule '" . $name . "' does not have a password set.", "errorcode" => "access_denied");
-								else if ($pwreq && Str::CTstrcmp($sinfo["schedule"]["password"], $data["password"]) == 0)  $result2 = array("success" => false, "error" => "Access denied.  Invalid password.", "errorcode" => "access_denied");
+								else if ($pwreq && Str::CTstrcmp($sinfo["schedule"]["password"], $data["password"]) != 0)  $result2 = array("success" => false, "error" => "Access denied.  Invalid password.", "errorcode" => "access_denied");
 								else if ($data["action"] === "trigger_run")
 								{
 									// Trigger a run.
@@ -2491,7 +2491,7 @@
 									$sinfo = &$cachedata["schedules"][$schedulekey][$name];
 
 									if (!isset($sinfo["schedule"]["password"]))  $result2 = array("success" => false, "error" => "Access denied.  The schedule '" . $name . "' in '" . $schedulekey . "' does not have a password set.", "errorcode" => "access_denied");
-									else if (Str::CTstrcmp($sinfo["schedule"]["password"], $data["password"]) == 0)  $result2 = array("success" => false, "error" => "Access denied.  Invalid password.", "errorcode" => "access_denied");
+									else if (Str::CTstrcmp($sinfo["schedule"]["password"], $data["password"]) != 0)  $result2 = array("success" => false, "error" => "Access denied.  Invalid password.", "errorcode" => "access_denied");
 								}
 							}
 						}
